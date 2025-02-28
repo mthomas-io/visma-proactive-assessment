@@ -11,8 +11,7 @@ const { data: character, status, error } = universe.useCharacter(id)
 
 <template>
   <div v-if="error">
-    <h2>Error</h2>
-    <p>{{ error }}</p>
+    <h3>Failed to load that character, why don't you try another one?</h3>
   </div>
 
   <div v-else-if="status === 'pending'" class="flex items-start flex-col md:flex-row gap-8">

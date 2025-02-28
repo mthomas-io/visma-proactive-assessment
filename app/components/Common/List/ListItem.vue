@@ -20,9 +20,6 @@ const is = computed(() => props.to ? NuxtLink : 'div')
         <h3 class="font-semibold capitalize">
           {{ title }}
         </h3>
-        <!-- <p class="text-sm text-gray-500">
-          {{ description }}
-        </p> -->
       </div>
       <UIcon name="i-heroicons-arrow-right" class="ml-auto group-focus:translate-x-2 group-hover:translate-x-2 transition-transform w-5 h-5" />
     </component>

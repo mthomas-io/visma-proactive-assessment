@@ -8,7 +8,7 @@ defineProps<{
 </script>
 
 <template>
-  <UCard class="group h-full flex flex-col justify-between hover:bg-gray-100 dark:hover:bg-gray-800">
+  <UCard class="group h-full flex flex-col justify-between" :class="{ 'hover:bg-gray-100 dark:hover:bg-gray-800': isButton }">
     <template #header>
       <h3 class="font-bold capitalize">
         {{ title }}

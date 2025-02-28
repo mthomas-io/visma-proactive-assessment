@@ -15,11 +15,8 @@ export function useRickAndMortyCharacters() {
     query: computed(() => ({ page: pageNumber.value })),
   })
 
-  // This is a workaround for the fact that API Party contains a bug that doesn't return the first cached page a second time.
-  // https://github.com/johannschopplich/nuxt-api-party/issues/14
-  // https://github.com/johannschopplich/nuxt-api-party/issues/91
+  // Same workaround as in Pokemon
   watch(pageNumber, () => {
-    // If first page is being requested, omit cache regardless of whether it's already cached
     if (pageNumber.value === 1) {
       rest.clear()
       rest.refresh()
@@ -28,10 +25,6 @@ export function useRickAndMortyCharacters() {
 
   const totalItems = computed<number>(() => data.value?.info.count || 0)
 
-  // I would be doing this data parsing in usePokemonData's `transform` method,
-  // but with API Party transform() gets called with the already transformed/ cached data when it's called a second time.
-  // It also is typed for the Input and Output to be of the same type, basically rendering the transform method useless..
-  // https://github.com/johannschopplich/nuxt-api-party/issues/49
   const characters = computed<UniverseListItem[] | null>(() => {
     if (!data.value) {
       return null
@@ -76,7 +69,6 @@ export function useRickAndMortyCharacter(id: MaybeRefOrGetter<string>) {
       name: data.value.name,
       imgUrl: data.value.image,
       description: `${data.value.name} is a ${data.value.gender} ${data.value.species} appearing in ${data.value.episode.length} episodes. They're originally from ${data.value.origin.name} and their current location is ${data.value.location.name}.`,
-      // A couple key/value pairs to be displayed as details a table
       characteristics: {
         Name: data.value.name,
         Species: data.value.species,

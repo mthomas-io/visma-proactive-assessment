@@ -78,7 +78,7 @@ export function usePokemonCharacter(id: MaybeRefOrGetter<string>) {
       name: data.value.name,
       imgUrl: data.value.sprites.front_default,
       description: `${data.value.name.slice(0, 1).toUpperCase()}${data.value.name.slice(1)} (species ${data.value.species.name}) weighs in at ${data.value.weight / 10}kg, and has a height of ${data.value.height / 10}m, they know ${data.value.moves.length} different moves!`,
-      // Create key/values from primitive types to be displayed as a table
+      // A couple key/value pairs to be displayed as details a table
       characteristics: {
         'Name': data.value.name,
         'Species': data.value.species.name,
