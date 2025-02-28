@@ -1,19 +1,8 @@
 <template>
-  <div class="py-8">
-    <UContainer>
-      <header class="border-b mb-8 py-2 text-xl">
-        <h1>
-          Welcome to the home page! This is where you can start building your app.
-        </h1>
-      </header>
-      <div class="grid gap-4 xl:grid-cols-2">
-        <PageSection title="Rick and Morty API response">
-          <ExampleApiResponseRickAndMorty />
-        </PageSection>
-        <PageSection title="Pokemon API response">
-          <ExampleApiResponsePokemon />
-        </PageSection>
-      </div>
-    </UContainer>
-  </div>
+  <UContainer class="py-8 w-full">
+    <UniverseOverviewHeaderNav />
+    <p class="mx-2 my-4">
+      Select a universe above to get started!
+    </p>
+  </UContainer>
 </template>

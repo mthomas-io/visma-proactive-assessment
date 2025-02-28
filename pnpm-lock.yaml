@@ -51,7 +51,7 @@ importers:
         specifier: ^3.15.2
         version: 3.15.4(@parcel/watcher@2.5.1)(@types/node@22.13.4)(better-sqlite3@11.8.1)(db0@0.2.4(better-sqlite3@11.8.1))(eslint@9.20.1(jiti@2.4.2))(ioredis@5.5.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.34.8)(terser@5.39.0)(typescript@5.7.3)(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(terser@5.39.0)(yaml@2.7.0))(vue-tsc@2.2.2(typescript@5.7.3))(yaml@2.7.0)
       nuxt-api-party:
-        specifier: ^2.1.0
+        specifier: ^2.1.2
         version: 2.1.2(magicast@0.3.5)(openapi-typescript@7.6.1(typescript@5.7.3))
       pinia:
         specifier: ^3.0.1
